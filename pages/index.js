@@ -15,7 +15,7 @@ export default function Home() {
         <h2>Hello World!</h2>
 
   <div className="arjs-loader">
-    <div>Loading, please wait...</div>
+    <div>Loading, please wait!!!</div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
