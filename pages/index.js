@@ -13,11 +13,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <h2>Hello World!</h2>
-<body style='margin : 0px; overflow: hidden;'>
-  <div class="arjs-loader">
+  <div className="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-    <a-scene
+  <body>
+  <a-scene
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
@@ -34,8 +34,7 @@ export default function Home() {
         </a-nft>
 		<a-entity camera></a-entity>
     </a-scene>
-</body>
-
+  </body>
       </main>
     </div>
   )
