@@ -17,23 +17,35 @@ export default function Home() {
     <div>Loading, please wait...</div>
   </div>
   <body>
+  {/* <!-- a-frame scene --> */}
   <a-scene
-        vr-mode-ui="enabled: false;"
-        renderer="logarithmicDepthBuffer: true;"
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
-        <a-nft
-            type='nft' url='../assets/images/white-image.jpg'
-            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <a-entity
-                gltf-model='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf'
-                scale="5 5 5"
-                position="100 100 0"
-                >
-            </a-entity>
-        </a-nft>
-		<a-entity camera></a-entity>
-    </a-scene>
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    {/* <!-- a-nft is the anchor that defines an Image Tracking entity --> */}
+    {/* <!-- on 'url' use the path to the Image Descriptors created before. --> */}
+    {/* <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' --> */}
+    <a-nft
+      type="nft"
+      url="../output"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      {/* <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity --> */}
+      <a-entity
+        gltf-model="<path-to-your-model>"
+        scale="5 5 5"
+        position="50 150 0"
+      >
+      </a-entity>
+    </a-nft>
+    {/* <!-- static camera that moves according to the device movemenents --> */}
+    <a-entity camera></a-entity>
+  </a-scene>
   </body>
       </main>
     </div>
